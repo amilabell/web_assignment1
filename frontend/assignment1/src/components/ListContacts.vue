@@ -81,6 +81,9 @@ export default {
     }
     },
   mounted() {
+      if(getCookie("user") === ""){
+          alert("You are not logged in. Please click on the green Login button and enter your credentials to see and manage your contacts")
+      }
     axios.get('http://crud-tutorial-amilabell.c9users.io:8081/contacts/get?username='+ getCookie("user"))
       .then((response) => {
         this.contacts = response.data

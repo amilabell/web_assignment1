@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-dark bg-dark">
     <div class="navbar-header">
-      <router-link to="/" class="navbar-brand"> Assignment </router-link>
+      <router-link to="/" class="navbar-brand"> Your Contacts </router-link>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li>

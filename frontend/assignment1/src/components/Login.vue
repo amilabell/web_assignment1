@@ -20,9 +20,6 @@
                  <div class="btn btn-secondary">I am not a user yet</div>
             </router-link>
                  <div class="btn btn-submit btn-success" @click=checkCredentials>Submit</div>
-            <router-link :to="{name: 'ListContacts'}">
-          <div class="btn btn-submit btn-info">Go Back</div>
-          </router-link>
       </div>
       </div>
     </form>

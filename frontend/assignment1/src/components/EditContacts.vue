@@ -34,9 +34,7 @@
           <label class="pull-left">imgURL </label>
           <input type="text" class="form-control" v-model="old.image_url">
         </div>
-        <router-link :to="{name: 'ListContacts'}">
           <button type="submit" class="btn btn-success"  @click="updateToAPI">Submit</button>
-        </router-link>
         <router-link :to="{name: 'ListContacts'}">
           <button class="btn btn-info">Go Back</button>
         </router-link>
@@ -73,11 +71,12 @@ export default {
       }
       axios.put('https://crud-tutorial-amilabell.c9users.io:8081/contacts/changeContact?_id=' + this.$route.params.contactid, newContact)
         .then((response) => {
-          console.log(response)
+          
         })
         .catch((error) => {
           console.log(error)
         })
+        this.$router.push('../ListContacts')
     }
   },
   mounted () {
