@@ -71,7 +71,6 @@ export default {
         facebook: this.old.facebook,
         phone: this.old.phone
       }
-      console.log(newContact)
       axios.put('https://crud-tutorial-amilabell.c9users.io:8081/contacts/changeContact?_id=' + this.$route.params.contactid, newContact)
         .then((response) => {
           console.log(response)
@@ -79,7 +78,6 @@ export default {
         .catch((error) => {
           console.log(error)
         })
-      //window.location.reload()
     }
   },
   mounted () {

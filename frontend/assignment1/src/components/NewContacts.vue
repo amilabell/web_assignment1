@@ -99,7 +99,6 @@ export default {
         phone: this.contact.phone,
         username: getCookie("user") 
       }
-      console.log()
 
       if(getCookie("user") === ""){
         alert("You are not logged in")

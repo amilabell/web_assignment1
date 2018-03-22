@@ -7,7 +7,6 @@ import EditContacts from '@/components/EditContacts'
 import ListContacts from '@/components/ListContacts'
 import NewUsers from '@/components/NewUsers'
 import Logout from '@/components/Logout'
-import Search from '@/components/Search'
 
 Vue.use(Router)
 

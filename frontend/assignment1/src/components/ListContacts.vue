@@ -50,12 +50,10 @@ function getCookie(cname) {
 const url= 'http://crud-tutorial-amilabell.c9users.io:8081'
 import axios from 'axios'
 import NavBar from './NavBar';
-import Search from './Search';
 export default {
   name: 'ListContacts',
   components: {
-    NavBar,
-    Search
+    NavBar
   },
   data() {
     return {
@@ -83,7 +81,6 @@ export default {
     }
     },
   mounted() {
-      console.log(getCookie("user"))
     axios.get('http://crud-tutorial-amilabell.c9users.io:8081/contacts/get?username='+ getCookie("user"))
       .then((response) => {
         this.contacts = response.data

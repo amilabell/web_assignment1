@@ -5,11 +5,10 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li>
-         <router-link :to="{name: 'Logout'}">
-              <button class="btn btn-danger btn-large">
+              <button id="logout" class="btn btn-danger btn-large" @click=loggingout>
                    <img src="https://cdn1.iconfinder.com/data/icons/freeline/32/account_friend_human_man_member_person_profile_user_users-256.png" width="20"> {{username}}</img>
               </button>
-         </router-link>
+      
          <router-link :to="{name: 'Login'}">
               <button id="login" class="btn btn-success btn-large">
                    {{login_var}}
@@ -37,11 +36,9 @@ function getCookie(cname) {
     }
     return ("");
 }
-import Logout from './Logout';
 export default {
   name: 'NavBar',
   components: {
-      Logout
   },
   data() {
     return{
@@ -54,16 +51,22 @@ export default {
     if(getCookie("user") === ""){
       this.login_var = "Login"
       document.getElementById("login").disabled = false
+      document.getElementById("logout").disabled = true
       
     }else{
       this.login_var = "You are logged in"
       document.getElementById("login").disabled = true
+      document.getElementById("logout").disabled = false
+    }
+  },
+  methods: {
+    loggingout: function(){
+      this.$router.push('Logout')
     }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
     nav{
         width: 104%;

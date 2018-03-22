@@ -27,7 +27,6 @@
 
 <script>
 import NavBar from './NavBar';
-var usergreeting = "";
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -50,7 +49,6 @@ function setCookie(cname, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + expires + ";path=/";
-    console.log("cookie deleted")
 }
 
 function delete_cookie( name ) {
@@ -64,7 +62,7 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      usergreeting: ""
     }
   },
   methods: {
@@ -78,7 +76,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container{
   border:solid;

@@ -38,7 +38,6 @@ function setCookie(cname, cvalue, exdays) {
                 d.setTime(d.getTime() + (exdays*24*60*60*1000));
                 var expires = "expires="+ d.toUTCString();
                 document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-                console.log("cookie set")
             }
 export default {
   name: 'Login',
@@ -59,15 +58,12 @@ export default {
       //var check
       axios.get('http://crud-tutorial-amilabell.c9users.io:8081/users/find?name=' + this.user.username)
         .then((response) => {
-          console.log(response.data)
           
           const check = response.data[0]
-          console.log(check)
           if(!check){
             alert("no registered user")
           }else{
            if(this.user.password === check.password){
-             alert("nicely done")
              setCookie("user", this.user.username, 1)
              this.$router.push('ListContacts')
            }else{

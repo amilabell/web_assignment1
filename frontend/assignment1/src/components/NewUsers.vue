@@ -23,9 +23,7 @@
            <router-link :to="{name: 'Login'}">
                  <div class="btn btn-secondary">I already have an account</div>
             </router-link>
-           <!-- <router-link :to="{name: 'ListContacts'}">-->
                  <div class="btn btn-submit btn-success" @click=sendUser>Submit</div>
-            <!--</router-link>-->
           <div class="btn btn-submit btn-info">Go Back</div>
       </div>
       </div>
@@ -59,10 +57,8 @@ export default {
       var check
       axios.get('http://crud-tutorial-amilabell.c9users.io:8081/users/find?name=' + this.user.username)
         .then((response) => {
-          console.log(response.data)
           
           check = response.data[0]
-          console.log(check)
           if(check){
             alert("Username already taken")
           }else{
@@ -78,9 +74,6 @@ export default {
           .catch((error)=> {
             console.log(error)
       })
-      console.log("before " + check)
-      
-      //console.log(newUser)
         axios.post('https://crud-tutorial-amilabell.c9users.io:8081/users/new', newUser)
         .then((response) => {
           console.log(response)
@@ -88,7 +81,6 @@ export default {
         .catch((error) => {
           console.log(error)
         })
-      //window.location.reload()
     }
 }
 }
