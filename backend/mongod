@@ -1,0 +1,2 @@
+mongod --bind_ip=$IP --dbpath=./database_store --nojournal --rest "$@"  --repair
+mongod --bind_ip=$IP --dbpath=./database_store --nojournal --rest "$@"
